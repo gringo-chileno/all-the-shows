@@ -12,8 +12,8 @@
     "venue": "Estadio Nacional",
     "city": "Santiago",
     "country": "Chile",
-    "youtube": null,
-    "setlist": null,
+    "youtube": "https://www.youtube.com/watch?v=f74VYYbzTeg",
+    "setlist": "https://www.setlist.fm/setlist/oasis/2025/estadio-nacional-santiago-chile-53516f8d.html",
     "source": "Calendar",
     "notes": ""
   },
@@ -896,8 +896,8 @@
     "venue": "Centennial Olympic Park",
     "city": "Atlanta",
     "country": "USA",
-    "youtube": null,
-    "setlist": null,
+    "youtube": "https://www.youtube.com/watch?v=qli__ItikLo",
+    "setlist": "https://www.setlist.fm/setlist/outkast/2014/centennial-olympic-park-atlanta-ga-43cf7feb.html",
     "source": "Calendar",
     "notes": ""
   },
@@ -1312,8 +1312,8 @@
     "venue": "The Tabernacle",
     "city": "Atlanta",
     "country": "USA",
-    "youtube": null,
-    "setlist": null,
+    "youtube": "https://www.youtube.com/watch?v=oLmp4DNHmC4",
+    "setlist": "https://www.setlist.fm/setlist/neutral-milk-hotel/2013/tabernacle-atlanta-ga-2bc76052.html",
     "source": "Email",
     "notes": ""
   },
@@ -1348,8 +1348,8 @@
     "venue": "Cadence Bank Amphitheatre at Chastain Park",
     "city": "Atlanta",
     "country": "USA",
-    "youtube": null,
-    "setlist": null,
+    "youtube": "https://www.youtube.com/watch?v=ApSPEV8rotk",
+    "setlist": "https://www.setlist.fm/setlist/sigur-ros/2013/chastain-park-amphitheater-atlanta-ga-7bc7d2c4.html",
     "source": "Calendar",
     "notes": ""
   },
@@ -2075,7 +2075,7 @@
     "city": "Atlanta",
     "country": "USA",
     "youtube": null,
-    "setlist": null,
+    "setlist": "https://www.setlist.fm/setlist/kendrick-lamar/2011/the-masquerade-atlanta-ga-13c809a1.html",
     "source": "Calendar",
     "notes": ""
   },
