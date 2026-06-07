@@ -27,7 +27,11 @@
     var music = list.filter(function (e) { return e.type === "music"; });
     var sports = list.filter(function (e) { return e.type === "sports"; });
     var artists = SL.tally(music.map(function (e) { return e.headliner; }));
-    var teams = SL.tally(sports.reduce(function (a, e) { return a.concat([e.home, e.away]); }, []));
+    var teams = SL.tally(sports.reduce(function (a, e) {
+      // If Rob went to see a specific team (e.g. the visiting Mets at a Braves game), count only that.
+      if (e.saw) return a.concat([e.saw]);
+      return a.concat([e.home, e.away]);
+    }, []));
     var venues = SL.tally(list.map(function (e) { return e.venue; }));
     var cities = SL.tally(list.map(function (e) { return e.city; }));
     var years = SL.tally(list.map(SL.yearOf));
