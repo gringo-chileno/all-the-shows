@@ -84,10 +84,10 @@
   }
 
   // ---- stats panel ---------------------------------------------------------
-  function statList(rows, unit) {
+  function statList(rows, unit, limit) {
     if (!rows.length) return '<div class="muted">' + DASH + "</div>";
     var max = rows[0][1];
-    return rows.slice(0, 10).map(function (r) {
+    return rows.slice(0, limit || 10).map(function (r) {
       return '<div class="rank">' +
         '<div class="rank-bar" style="width:' + Math.round((r[1] / max) * 100) + '%"></div>' +
         '<span class="rank-name">' + esc(r[0]) + "</span>" +
@@ -109,7 +109,7 @@
     if (state.filter !== "music") panels.push('<section class="spanel"><h4>Most-seen teams</h4>' + statList(s.teams, "") + "</section>");
     panels.push('<section class="spanel"><h4>Top venues</h4>' + statList(s.venues, "") + "</section>");
     panels.push('<section class="spanel"><h4>Top cities</h4>' + statList(s.cities, "") + "</section>");
-    panels.push('<section class="spanel"><h4>By year</h4>' + statList(s.byYear, "") + "</section>");
+    panels.push('<section class="spanel spanel-years"><h4>By year</h4><div class="year-grid">' + statList(s.byYear, "", 99) + "</div></section>");
     return bar + '<div class="sdetail">' + panels.join("") + "</div>";
   }
 
