@@ -126,12 +126,12 @@
     "notes": ""
   },
   {
-    "id": "2024-11-15-atlanta-hawks",
+    "id": "2024-11-15-washington-wizards-atlanta-hawks",
     "type": "sports",
     "date": "2024-11-15",
     "headliner": "",
     "support": [],
-    "away": null,
+    "away": "Washington Wizards",
     "home": "Atlanta Hawks",
     "league": "NBA",
     "title": null,
@@ -704,12 +704,12 @@
     "notes": ""
   },
   {
-    "id": "2015-02-04-atlanta-hawks",
+    "id": "2015-02-04-washington-wizards-atlanta-hawks",
     "type": "sports",
     "date": "2015-02-04",
     "headliner": "",
     "support": [],
-    "away": null,
+    "away": "Washington Wizards",
     "home": "Atlanta Hawks",
     "league": "NBA",
     "title": null,
@@ -1972,12 +1972,12 @@
     "notes": ""
   },
   {
-    "id": "2011-04-29-atlanta-braves",
+    "id": "2011-04-29-st-louis-cardinals-atlanta-braves",
     "type": "sports",
     "date": "2011-04-29",
     "headliner": "",
     "support": [],
-    "away": null,
+    "away": "St. Louis Cardinals",
     "home": "Atlanta Braves",
     "league": "MLB",
     "title": null,
@@ -2116,12 +2116,12 @@
     "notes": ""
   },
   {
-    "id": "2011-03-01-atlanta-thrashers",
+    "id": "2011-03-01-montreal-canadiens-atlanta-thrashers",
     "type": "sports",
     "date": "2011-03-01",
     "headliner": "",
     "support": [],
-    "away": null,
+    "away": "Montreal Canadiens",
     "home": "Atlanta Thrashers",
     "league": "NHL",
     "title": null,
