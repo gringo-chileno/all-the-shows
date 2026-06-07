@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Show Log</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-head">
+    <div class="head-row">
+      <h1>Show&nbsp;Log</h1>
+      <div class="head-right">
+        <a class="btn-link" href="editor.html">+ Add / edit</a>
+      </div>
+    </div>
+    <p class="tagline">Every concert &amp; game I can remember.</p>
+  </header>
+
+  <div class="controls">
+    <div class="filters" role="group" aria-label="Filter">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="music">Music</button>
+      <button data-filter="sports">Sports</button>
+      <button data-filter="other">Other</button>
+    </div>
+    <div class="control-right">
+      <input id="search" type="search" placeholder="Search artist, team, venue, city…  ( / )" autocomplete="off">
+      <select id="sort" aria-label="Sort">
+        <option value="new">Newest first</option>
+        <option value="old">Oldest first</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="statsbar">
+    <button id="statsToggle">Show stats ▾</button>
+    <span id="count" class="count"></span>
+  </div>
+  <section id="stats" class="stats"></section>
+
+  <main id="content"></main>
+
+  <footer class="site-foot">
+    <span>Sample data shown. Replaced with your real events after mining.</span>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

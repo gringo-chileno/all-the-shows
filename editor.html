@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Add / Edit — Show Log</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">🎟️</span><span class="brand-text">Show Log</span></a>
+      <a class="btn btn-ghost" href="index.html">View log</a>
+    </div>
+  </header>
+
+  <main class="editor-main">
+    <h1>Add or edit an event</h1>
+    <p class="editor-intro">
+      This form edits a working copy saved in your browser. When you're done, hit
+      <strong>Export events.json</strong> and drop the file into the repo's <code>data/</code>
+      folder (or ask Claude to do it), then commit. Nothing is sent anywhere.
+    </p>
+
+    <div class="editor-actions" style="border-top:none;padding-top:0;margin-top:0;">
+      <button id="new-btn" class="btn btn-secondary" type="button">+ New entry</button>
+      <button id="reload-btn" class="btn btn-secondary" type="button">Reload from data file</button>
+      <label class="btn btn-secondary" style="cursor:pointer;">
+        Import an events.json
+        <input id="import-file" type="file" accept="application/json,.json" hidden>
+      </label>
+    </div>
+
+    <form id="form" autocomplete="off">
+      <input type="hidden" id="editing-id">
+
+      <div class="field-row">
+        <div class="field">
+          <label for="f-type">Type</label>
+          <select id="f-type">
+            <option value="music">Music</option>
+            <option value="sports">Sports</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-date">Date <span class="hint">(leave blank if unknown)</span></label>
+          <input id="f-date" type="date">
+        </div>
+      </div>
+
+      <!-- MUSIC / OTHER fields -->
+      <div id="grp-music">
+        <div class="field">
+          <label for="f-headliner">Headliner / act</label>
+          <input id="f-headliner" type="text" placeholder="Pearl Jam">
+        </div>
+        <div class="field">
+          <label for="f-support-input">Opening acts <span class="hint">(type and press Enter)</span></label>
+          <div class="chip-input" id="support-chips">
+            <input id="f-support-input" type="text" placeholder="Mudhoney…">
+          </div>
+        </div>
+      </div>
+
+      <!-- SPORTS fields -->
+      <div id="grp-sports" hidden>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-away">Away team</label>
+            <input id="f-away" type="text" placeholder="Cleveland Indians">
+          </div>
+          <div class="field">
+            <label for="f-home">Home team</label>
+            <input id="f-home" type="text" placeholder="Chicago Cubs">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-league">League <span class="hint">(pick or type)</span></label>
+          <input id="f-league" type="text" list="league-list" placeholder="MLB">
+          <datalist id="league-list"></datalist>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-title">Display title <span class="hint">(optional — auto-built from the act or matchup)</span></label>
+        <input id="f-title" type="text" placeholder="leave blank to auto-build">
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="f-venue">Venue <span class="hint">(pick or type)</span></label>
+          <input id="f-venue" type="text" list="venue-list" placeholder="Movistar Arena">
+          <datalist id="venue-list"></datalist>
+        </div>
+        <div class="field">
+          <label for="f-city">City <span class="hint">(pick or type)</span></label>
+          <input id="f-city" type="text" list="city-list" placeholder="Santiago">
+          <datalist id="city-list"></datalist>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="f-country">Country</label>
+          <select id="f-country">
+            <option value="Chile">Chile</option>
+            <option value="USA">USA</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-source">Source</label>
+          <input id="f-source" type="text" placeholder="Memory">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="f-youtube">YouTube link <span class="hint">(optional — else a search link is made)</span></label>
+          <input id="f-youtube" type="url" placeholder="https://youtu.be/…">
+        </div>
+        <div class="field" id="field-setlist">
+          <label for="f-setlist">Setlist.fm link <span class="hint">(optional)</span></label>
+          <input id="f-setlist" type="url" placeholder="https://www.setlist.fm/…">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-notes">Notes <span class="hint">(keep private stuff out if you'll publish)</span></label>
+        <textarea id="f-notes" placeholder="front row, rain delay, who you went with…"></textarea>
+      </div>
+
+      <div class="editor-actions">
+        <button id="save-btn" class="btn btn-primary" type="submit">Save entry</button>
+        <button id="copy-entry-btn" class="btn btn-secondary" type="button">Copy this entry's JSON</button>
+        <button id="export-btn" class="btn btn-secondary" type="button">⬇ Export events.json</button>
+        <button id="delete-btn" class="link-btn" type="button" hidden>Delete this entry</button>
+      </div>
+    </form>
+
+    <section class="list-panel">
+      <h3 class="panel-title">Entries in working copy (<span id="entry-count">0</span>)</h3>
+      <div id="entry-list"></div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "2023-11-22-pearl-jam", "type": "music", "date": "2023-11-22",
+    "headliner": "Pearl Jam", "support": ["Mudhoney"],
+    "title": "", "venue": "Estadio Monumental", "city": "Santiago", "country": "Chile",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2018-11-20-pearl-jam", "type": "music", "date": "2018-11-20",
+    "headliner": "Pearl Jam", "support": [],
+    "title": "", "venue": "Estadio San Carlos de Apoquindo", "city": "Santiago", "country": "Chile",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2011-07-02-pearl-jam", "type": "music", "date": "2011-07-02",
+    "headliner": "Pearl Jam", "support": [],
+    "title": "", "venue": "Wrigley Field", "city": "Chicago", "country": "USA",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2018-04-14-radiohead", "type": "music", "date": "2018-04-14",
+    "headliner": "Radiohead", "support": [],
+    "title": "", "venue": "Movistar Arena", "city": "Santiago", "country": "Chile",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2012-04-10-radiohead", "type": "music", "date": "2012-04-10",
+    "headliner": "Radiohead", "support": [],
+    "title": "", "venue": "United Center", "city": "Chicago", "country": "USA",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2019-03-20-the-cure", "type": "music", "date": "2019-03-20",
+    "headliner": "The Cure", "support": [],
+    "title": "", "venue": "Movistar Arena", "city": "Santiago", "country": "Chile",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2016-10-15-arctic-monkeys", "type": "music", "date": "2016-10-15",
+    "headliner": "Arctic Monkeys", "support": ["Mini Mansions"],
+    "title": "", "venue": "Movistar Arena", "city": "Santiago", "country": "Chile",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2015-06-12-tame-impala", "type": "music", "date": "2015-06-12",
+    "headliner": "Tame Impala", "support": [],
+    "title": "", "venue": "Teatro Caupolicán", "city": "Santiago", "country": "Chile",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2009-08-07-the-killers", "type": "music", "date": "2009-08-07",
+    "headliner": "The Killers", "support": [],
+    "title": "", "venue": "Lollapalooza", "city": "Chicago", "country": "USA",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2014-11-08-foo-fighters", "type": "music", "date": "2014-11-08",
+    "headliner": "Foo Fighters", "support": [],
+    "title": "", "venue": "Estadio Nacional", "city": "Santiago", "country": "Chile",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2016-10-28-cubs-indians", "type": "sports", "date": "2016-10-28",
+    "home": "Chicago Cubs", "away": "Cleveland Indians", "league": "MLB",
+    "title": "", "venue": "Wrigley Field", "city": "Chicago", "country": "USA",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "World Series Game 3 (sample)."
+  },
+  {
+    "id": "2013-05-19-cubs-mets", "type": "sports", "date": "2013-05-19",
+    "home": "Chicago Cubs", "away": "New York Mets", "league": "MLB",
+    "title": "", "venue": "Wrigley Field", "city": "Chicago", "country": "USA",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2022-09-10-colo-colo-u", "type": "sports", "date": "2022-09-10",
+    "home": "Colo-Colo", "away": "Universidad de Chile", "league": "Primera División",
+    "title": "", "venue": "Estadio Monumental", "city": "Santiago", "country": "Chile",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Superclásico (sample)."
+  },
+  {
+    "id": "2010-01-23-bulls-heat", "type": "sports", "date": "2010-01-23",
+    "home": "Chicago Bulls", "away": "Miami Heat", "league": "NBA",
+    "title": "", "venue": "United Center", "city": "Chicago", "country": "USA",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2019-06-15-blackhawks", "type": "sports", "date": "2019-06-15",
+    "home": "Chicago Blackhawks", "away": "Detroit Red Wings", "league": "NHL",
+    "title": "", "venue": "United Center", "city": "Chicago", "country": "USA",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Sample row."
+  },
+  {
+    "id": "2017-05-05-john-mulaney", "type": "other", "date": "2017-05-05",
+    "headliner": "John Mulaney", "support": [],
+    "title": "John Mulaney (comedy)", "venue": "Chicago Theatre", "city": "Chicago", "country": "USA",
+    "youtube": null, "setlist": null, "source": "sample", "notes": "Stand-up (sample)."
+  }
+]
