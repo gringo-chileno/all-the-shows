@@ -933,7 +933,7 @@
     "city": "Atlanta",
     "country": "USA",
     "youtube": null,
-    "setlist": null,
+    "setlist": "https://www.setlist.fm/setlist/beck/2014/fox-theatre-atlanta-ga-5bc10b98.html",
     "source": "Calendar",
     "notes": ""
   },
@@ -1461,7 +1461,7 @@
     "city": "Atlanta",
     "country": "USA",
     "youtube": null,
-    "setlist": null,
+    "setlist": "https://www.setlist.fm/setlist/tame-impala/2013/tabernacle-atlanta-ga-6bd9c22a.html",
     "source": "Calendar",
     "notes": ""
   },
@@ -1496,7 +1496,7 @@
     "venue": "The Tabernacle",
     "city": "Atlanta",
     "country": "USA",
-    "youtube": null,
+    "youtube": "https://www.youtube.com/watch?v=bNseRC0BvOw",
     "setlist": null,
     "source": "Email",
     "notes": ""
