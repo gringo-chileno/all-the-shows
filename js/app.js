@@ -153,7 +153,7 @@
     var list = currentList();
     $("#stats").innerHTML = renderStats(computeStats(list));
     document.body.classList.toggle("stats-open", state.statsOpen);
-    $("#statsToggle").textContent = state.statsOpen ? "Hide stats ▴" : "Show stats ▾";
+    $("#statsToggle").textContent = state.statsOpen ? "📊 Hide stats ▴" : "📊 Show stats ▾";
     renderContent(list);
     $("#count").textContent = list.length + " shown";
     Array.prototype.forEach.call(document.querySelectorAll("[data-filter]"), function (b) {
