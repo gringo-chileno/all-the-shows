@@ -42,21 +42,31 @@
 
   // ---- render pieces -------------------------------------------------------
   function iconLinks(e) {
-    var out = ['<a class="ic yt" href="' + SL.ytLink(e) + '" target="_blank" rel="noopener" title="' +
-      (e.youtube ? "Watch video" : "Search YouTube") + '">▶</a>'];
+    var out = ['<a class="tlink yt" href="' + SL.ytLink(e) + '" target="_blank" rel="noopener" title="' +
+      (e.youtube ? "Watch video" : "Search YouTube") + '">YouTube</a>'];
     if (e.type === "music") {
-      out.push('<a class="ic sl" href="' + SL.setlistLink(e) + '" target="_blank" rel="noopener" title="Setlist">◉</a>');
+      out.push('<a class="tlink sl" href="' + SL.setlistLink(e) + '" target="_blank" rel="noopener" title="Setlist">Setlist</a>');
     }
     return '<span class="ilinks">' + out.join("") + "</span>";
   }
 
   // ---- LAYOUT: index (editorial) -------------------------------------------
+  // Day-and-month only; the year lives in the group header above each block.
+  function shortDate(e) {
+    if (!e || !e.date) return DASH;
+    var p = e.date.split("-").map(Number);
+    var m = p[1], d = p[2];
+    if (!m) return DASH;
+    return SL.MONTHS[m - 1] + (d ? " " + d : "");
+  }
+
   function indexRow(e) {
     var kicker = e.type === "sports" ? (e.league || "Sports") : (e.type === "other" ? "Live" : "Concert");
     // Only the music "w/ support" reads as a subtitle here; sports league is the kicker.
     var sub = e.type === "music" ? SL.subtitle(e) : "";
     return '' +
       '<div class="iv-row iv-' + e.type + '">' +
+        '<div class="iv-date">' + shortDate(e) + "</div>" +
         '<div class="iv-left">' +
           '<div class="iv-kicker">' + esc(kicker) + "</div>" +
           '<div class="iv-name">' + dash(SL.title(e)) +
@@ -66,7 +76,6 @@
             iconLinks(e) +
           "</div>" +
         "</div>" +
-        '<div class="iv-year">' + (SL.yearOf(e) || DASH) + "</div>" +
       "</div>";
   }
 
@@ -92,10 +101,10 @@
         '<div class="kpi"><b>' + (s.first ? s.first.slice(0, 4) : DASH) + "</b><span>first</span></div>" +
       "</div>";
     var panels = [];
-    if (state.filter !== "sports") panels.push('<section class="spanel"><h4>Most-seen artists</h4>' + statList(s.artists, "×") + "</section>");
-    if (state.filter !== "music") panels.push('<section class="spanel"><h4>Most-seen teams</h4>' + statList(s.teams, "×") + "</section>");
-    panels.push('<section class="spanel"><h4>Top venues</h4>' + statList(s.venues, "×") + "</section>");
-    panels.push('<section class="spanel"><h4>Top cities</h4>' + statList(s.cities, "×") + "</section>");
+    if (state.filter !== "sports") panels.push('<section class="spanel"><h4>Most-seen artists</h4>' + statList(s.artists, "") + "</section>");
+    if (state.filter !== "music") panels.push('<section class="spanel"><h4>Most-seen teams</h4>' + statList(s.teams, "") + "</section>");
+    panels.push('<section class="spanel"><h4>Top venues</h4>' + statList(s.venues, "") + "</section>");
+    panels.push('<section class="spanel"><h4>Top cities</h4>' + statList(s.cities, "") + "</section>");
     panels.push('<section class="spanel"><h4>By year</h4>' + statList(s.byYear, "") + "</section>");
     return bar + '<div class="sdetail">' + panels.join("") + "</div>";
   }
@@ -120,7 +129,20 @@
       return;
     }
     content.className = "index-view";
-    content.innerHTML = list.map(indexRow).join("");
+    var counts = {};
+    list.forEach(function (e) { var y = SL.yearOf(e) || DASH; counts[y] = (counts[y] || 0) + 1; });
+    var html = [];
+    var curYear = null;
+    list.forEach(function (e) {
+      var y = SL.yearOf(e) || DASH;
+      if (y !== curYear) {
+        curYear = y;
+        html.push('<div class="iv-yearhead"><span class="iv-yh-year">' + esc(y) + "</span>" +
+          '<span class="iv-yh-count">' + counts[y] + (counts[y] === 1 ? " show" : " shows") + "</span></div>");
+      }
+      html.push(indexRow(e));
+    });
+    content.innerHTML = html.join("");
   }
 
   function render() {

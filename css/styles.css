@@ -98,21 +98,39 @@ body.stats-open .sdetail { display: grid; }
 .lnk.sl { color: #9bece0; }
 .empty { text-align: center; color: var(--muted); padding: 60px 0; }
 
-/* icon links (compact ▶ / ◉) */
-.ilinks { display: inline-flex; gap: 6px; }
-.ic { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; font-size: 13px; background: var(--surface); }
-.ic:hover { border-color: var(--accent); }
-.ic.yt { color: #ff9a9a; }
-.ic.sl { color: #9bece0; }
+/* text links (YouTube / Setlist) */
+.ilinks { display: inline-flex; gap: 8px; }
+.tlink {
+  font-size: 12px; font-weight: 700; letter-spacing: .01em; text-decoration: none;
+  padding: 3px 11px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--surface); white-space: nowrap; line-height: 1.7;
+}
+.tlink:hover { border-color: var(--accent); }
+.tlink.yt { color: #ff9a9a; }
+.tlink.sl { color: #9bece0; }
 
 /* ================= LAYOUT: INDEX (editorial) ================= */
 .index-view { max-width: 940px; }
+
+/* year section header — a clear, solid divider (not a ghosted watermark) */
+.iv-yearhead {
+  display: flex; align-items: baseline; gap: 12px;
+  margin: 34px 0 0; padding: 0 6px 8px 18px;
+  border-bottom: 2px solid var(--line);
+}
+.iv-yearhead:first-child { margin-top: 8px; }
+.iv-yh-year { font-size: clamp(22px, 3.2vw, 30px); font-weight: 800; letter-spacing: -.5px; color: var(--text); }
+.iv-yh-count { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+
 .iv-row {
-  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 22px;
-  padding: 20px 6px 20px 18px; position: relative;
+  display: grid; grid-template-columns: 54px 1fr; align-items: center; gap: 16px;
+  padding: 15px 6px 15px 18px; position: relative;
   border-bottom: 1px solid var(--line);
 }
-.iv-row:first-child { border-top: 1px solid var(--line); }
+.iv-date {
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  font-variant-numeric: tabular-nums; letter-spacing: .01em; white-space: nowrap;
+}
 /* color spine per type, brightens on hover */
 .iv-row::before {
   content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 3px;
@@ -133,12 +151,6 @@ body.stats-open .sdetail { display: grid; }
 .iv-support { font-size: .62em; font-weight: 600; color: var(--muted); letter-spacing: 0; }
 .iv-sub { color: var(--muted); font-size: 14px; margin-top: 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .iv-place { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
-.iv-year {
-  font-size: clamp(30px, 5vw, 52px); font-weight: 800; line-height: 1;
-  color: rgba(241, 243, 248, .12); font-variant-numeric: tabular-nums; flex: none;
-  transition: color .15s;
-}
-.iv-row:hover .iv-year { color: rgba(241, 243, 248, .28); }
 
 /* ---- footer ---- */
 .site-foot { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; text-align: center; }
@@ -191,6 +203,7 @@ form { margin-top: 18px; }
   .control-right { justify-content: stretch; }
   #search { max-width: none; }
   .field-row { grid-template-columns: 1fr; }
-  .iv-row { gap: 14px; padding: 16px 4px 16px 16px; }
-  .iv-year { font-size: clamp(24px, 9vw, 38px); }
+  .iv-row { grid-template-columns: 46px 1fr; gap: 12px; padding: 13px 4px 13px 16px; }
+  .iv-date { font-size: 12px; }
+  .iv-yearhead { padding-left: 16px; margin-top: 28px; }
 }
