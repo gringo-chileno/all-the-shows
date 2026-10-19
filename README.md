@@ -21,8 +21,9 @@ Then open http://localhost:8000 (the editor is at http://localhost:8000/editor.h
 Opening the file directly with `file://` will not work, since the data loads via `fetch`.
 
 ## Hosting
-Public-but-unlisted on GitHub Pages: the `noindex` meta tag plus `robots.txt` keep it
-out of search results, though the repo itself is still public. Keep anything private out
+Public-but-unlisted on Spacefast at https://all-the-shows.space.fast/. Publish changes
+with `sf publish . -m "what changed"` from this folder. The `noindex` meta tag plus
+`robots.txt` keep it out of search results, though the repo itself is still public. Keep anything private out
 of `events.json` (the `notes` field especially).
 
 ## Files
